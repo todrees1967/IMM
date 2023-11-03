@@ -33,7 +33,7 @@
 		"units": [
 			{
 				"name": "00-eth0.network",
-				"contents": "[Match]\nName=eth0\n\n[Network]\nAddress=192.168.0.5"
+				"contents": "[Match]\nName=eth0\n\n[Network]\nAddress=192.168.0.5\nGateway=192.168.0.1\nDNS=8.8.8.8"
 			}
 		]
 	}
