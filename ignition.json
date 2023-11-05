@@ -26,14 +26,13 @@
 					"source": "https://get.k3s.io"
 				},
 				"mode": 511
-			}
-		]
-	},
-	"networkd": {
-		"units": [
+			},
 			{
-				"name": "00-eth0.network",
-				"contents": "[Match]\nName=eth0\n\n[Network]\nAddress=192.168.0.5/24\nGateway=192.168.0.1\nDNS=8.8.8.8"
+				"path": "/etc/systemd/network/00-eth0.network",
+				"contents": {
+					"compression": "",
+					"source": "data:;base64,W01hdGNoXQpOYW1lPWV0aDAKCltOZXR3b3JrXQpETlM9OC44LjguOApBZGRyZXNzPTE5Mi4xNjguMC41LzI0CkdhdGV3YXk9MTkyLjE2OC4wLjEgICAg"
+				}
 			}
 		]
 	},
