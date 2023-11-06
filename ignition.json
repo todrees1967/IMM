@@ -28,12 +28,12 @@
 				"mode": 511
 			},
 			{
-				"path": "/etc/systemd/network/00-eth0.network",
-				"contents": {
-					"compression": "",
-					"source": "data:;base64,W01hdGNoXQpOYW1lPWV0aDAKCltOZXR3b3JrXQpETlM9OC44LjguOApBZGRyZXNzPTE5Mi4xNjguMC41LzI0CkdhdGV3YXk9MTkyLjE2OC4wLjEgICAg"
-				}
-			}
+        			"path": "/etc/systemd/network/11-static.network",
+        			"contents": {
+          				"compression": "",
+          				"source": "data:,%5BMatch%5D%0AName%3Deth0%0A%5BNetwork%5D%0AAddress%3D192.168.0.5%2F20%0AGateway%3D192.168.0.1%0ADNS%3D8.8.8.8%0A"
+        }
+      }
 		]
 	},
 	"systemd": {
