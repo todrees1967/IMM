@@ -31,7 +31,7 @@
         "path": "/etc/systemd/network/11-static.network",
         "contents": {
           "compression": "",
-          "source": "data:,%5BMatch%5D%0AName%3Deth0%0A%5BNetwork%5D%0AAddress%3D192.168.0.10%2F24%0AGateway%3D192.168.0.1%0ADNS%3D192.168.0.1%0A"
+          "source": "data:,%5BMatch%5D%0AName%3Deth0%0A%5BNetwork%5D%0AAddress%3D172.24.80.11%2F20%0AGateway%3D172.24.80.1%0ADNS%3D172.24.80.1%0A"
         }
       }
     ]
@@ -42,6 +42,15 @@
         "contents": "[Unit]\nDescription=Run K3s script\n#Wants = first-boot-complete.target\nWants = network-online.target\nAfter = network.target network-online.target        \nConditionFirstBoot=yes\nConditionPathExists=/opt/k3s-install.sh\nConditionPathExists=!/opt/bin/k3s\n[Service]\nType=forking\nTimeoutStartSec=180\nRemainAfterExit=yes\nKillMode=process\nEnvironment=\"K3S_TOKEN=secret_edgecluster_token\"\nEnvironment=\"INSTALL_K3S_EXEC=--cluster-init\"\nExecStart=/usr/bin/sh -c \"/opt/k3s-install.sh --disable=traefik\"\n[Install]\nWantedBy=multi-user.target\n",
         "enabled": true,
         "name": "k3s-install.service"
+      },
+      {
+        "dropins": [
+          {
+            "contents": "[Match]\nName=eth0\n[Network]\nAddress=172.24.80.11/20\nGateway=172.24.80.1\nDNS=172.24.80.1\n",
+            "name": "10-static.network.conf"
+          }
+        ],
+        "name": "systemd-networkd.service"
       }
     ]
   }
