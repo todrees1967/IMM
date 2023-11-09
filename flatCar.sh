@@ -17,7 +17,7 @@ echo -e " To access the Kubernetes server and deploy your IMM run the following
    \033[0m
 NOTE: The first command may return an error if the folder already exists."
 echo .
-#
+echo .
 read  -p "If you saw success of flatCar installer, you may boot into the OS; \n Would you line to reboot ? (Y/[N]): " ansYN
 if  [[ $ansYN =~ [Yy] ]];  then 
   echo Rebooting ......
