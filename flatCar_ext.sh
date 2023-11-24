@@ -22,5 +22,5 @@ read  -p "If you saw success of flatCar installer, you may boot into the OS; \n 
 if  [[ $ansYN =~ [Yy] ]];  then 
   echo Rebooting ......
   sudo eject cdrom
-  sudo reboot
+  sudo shutdown now
 fi
