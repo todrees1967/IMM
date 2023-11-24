@@ -31,7 +31,7 @@
         "path": "/etc/systemd/network/11-static.network",
         "contents": {
           "compression": "",
-          "source": "data:,%5BMatch%5D%0AName%3Deth0%0A%5BNetwork%5D%0AAddress%3D192.168.111.19%2F24%0AGateway%3D192.168.111.1%0ADNS%3D192.168.111.1%0A"
+          "source": "data:,%5BMatch%5D%0AName%3Deth0%0A%5BNetwork%5D%0AAddress%3D192.168.0.11%2F24%0AGateway%3D192.168.0.1%0ADNS%3D8.8.8.8%0A"
         }
       }
     ]
@@ -46,7 +46,7 @@
       {
         "dropins": [
           {
-            "contents": "[Match]\nName=eth0\n[Network]\nAddress=192.168.111.19/24\nGateway=192.168.111.1\nDNS=192.168.111.1\n",
+            "contents": "[Match]\nName=eth0\n[Network]\nAddress=192.168.0.11/24\nGateway=192.168.0.1\nDNS=8.8.8.8\n",
             "name": "10-static.network.conf"
           }
         ],
